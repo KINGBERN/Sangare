@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+    <meta name="keywords" content="healthy, gardens, Sangare">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.your-website.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Healthy Sangare Gardens</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+    <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+:root {
+  --green: green;
+  --white: white;
+  --light-color: black;
+  --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+  --border: .2rem solid rgba(0, 0, 0, .1);
+  --outline: .1rem solid rgba(0, 0, 0, .1);
+  --outline-hover: .2rem solid var(--black);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  background: ivory;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.heading {
+  text-align: center;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
+  font-size: 3.5rem;
+  color: var(--black);
+}
+
+.heading span {
+  background: var(--green);
+  color: bisque;
+  display: inline-block;
+  padding: .5rem 3rem;
+  clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .8rem 3rem;
+  font-size: 1.7rem;
+  border-radius: .5rem;
+  border: .2rem solid var(--black);
+  color: var(--black);
+  cursor: pointer;
+  background: none;
+}
+
+.btn:hover {
+  background: var(--green);
+  color: bisque;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  background: bisque;
+  box-shadow: var(--box-shadow);
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--black);
+}
+
+.header .logo i {
+  color: var(--green);
+}
+
+.header .navbar a {
+  font-size: 1.7rem;
+  margin: 0 1rem;
+  color: var(--black);
+}
+
+.header .navbar a:hover {
+  color: var(--green);
+}
+
+.header .icons div {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  border-radius: .5rem;
+  background: bisque;
+  color: var(--black);
+  font-size: 2rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header .icons div:hover {
+  background: var(--green);
+  color: bisque;
+}
+
+#menu-btn {
+  display: none;
+}
+
+/* Login Form Container */
+#login-form-container {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 250px;
+  background-color: bisque;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+#login-form-container label,
+#login-form-container input,
+#login-form-container button,
+#login-form-container .links {
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: none;
+}
+
+#login-form-container label {
+  font-weight: bold;
+}
+
+#login-form-container input,
+#login-form-container button {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+#login-form-container button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#login-form-container button:hover {
+  background: #0069d9;
+}
+
+#login-form-container .links a {
+    text-decoration: none;
+    position: relative;
+    color: #007bff;
+    margin-right: 1rem;
+    padding-bottom: 4px; /* Adjust this value to control the distance of dots from the text */
+    display: inline-block;
+  }
+
+  #login-form-container .links a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; /* Adjust this value to control the distance of dots from the text */
+    left: 0;
+    width: 100%;
+    height: 6px; /* Adjust the height of dots */
+    display: block;
+    background-image: radial-gradient(circle, #007bff 25%, transparent 0);
+    background-size: 10px 10px; /* Adjust the size of the circles */
+    background-position: 0 0; /* Adjust the position of the circles */
+    animation: blink 1s infinite;
+  }
+
+  #login-form-container .links a::before {
+    content: '';
+    position: absolute;
+    bottom: 2px; /* Adjust this value to control the distance of dots from the text */
+    left: 0;
+    width: 100%;
+    height: 6px; /* Adjust the height of dots */
+    display: block;
+    background-image: radial-gradient(circle, #007bff 25%, transparent 0);
+    background-size: 10px 10px; /* Adjust the size of the circles */
+    background-position: 0 0; /* Adjust the position of the circles */
+    animation: blink 1s 0.5s infinite; /* Start the animation with a 0.5s delay to create the blinking effect */
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 5px 0; /* Adjust the distance between the circles */
+    }
+  }
+
+  #login-form-container .links a:hover {
+    color: #0056b3;
+  }
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=600) no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 17rem;
+  padding-bottom: 10rem;
+}
+
+.home .content {
+  text-align: center;
+  width: 60rem;
+}
+
+.home .content h3 {
+  color: var(--black);
+  font-size: 3rem;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.home .content h3 span {
+  color: var(--green);
+}
+
+.home .content p {
+  color: var(--light-color);
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  line-height: 1.8;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.features .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.features .box-container .box {
+  padding: 2rem;
+  background: bisque;
+  outline: var(--outline);
+  outline-offset: -1rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.features .box-container .box:hover {
+  outline: var(--outline-hover);
+  outline-offset: 0rem;
+}
+
+.features .box-container .box img {
+  margin: 1rem 0;
+  height: 15rem;
+  max-width: 100%;
+}
+
+.features .box-container .box h3 {
+  font-size: 2.5rem;
+  line-height: 1.8;
+  color: var(--black);
+}
+
+.features .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.card-gallery {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-slide {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card {
+  width: calc(33.33% - 40px);
+  margin: 0 20px 40px;
+  position: relative;
+}
+
+.card-overlay {
+  opacity: 1;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+  padding: 20px;
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.card-text,
+.card-author {
+  display: block;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.pagination button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 0 5px;
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.pagination button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.pagination button:focus {
+  outline: none;
+}
+
+.footer {
+  background: ivory;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box h3 i {
+  color: var(--green);
+}
+
+.footer .box-container .box .links {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box .links i {
+  color: var(--green);
+  padding-right: 0.5rem;
+}
+
+.footer .box-container .box .links:hover i {
+  padding-right: 2rem;
+}
+
+.footer .box-container .box p {
+  line-height: 1.8;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .credit {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 2rem;
+  color: var(--black);
+  border-top: var(--border);
+}
+
+.footer .credit span {
+  color: var(--green);
+}
+
+#welcome-message {
+  font-size: 30px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.links {
+  margin-top: 10px;
+}
+
+.links a {
+  margin-right: 10px;
+}
+
+.password-toggle {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 1;
+    }
+    
+    .circle-letter {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+    }
+
+/* media queries  */
+
+@media (max-width:991px){
+
+html{
+    font-size: 55%;
+}
+
+.header{
+    padding:2rem;
+}
+
+section{
+    padding:2rem;
+}
+
+}
+
+@media (max-width:768px){
+
+#menu-btn{
+    display: inline-block;
+}
+
+.header .search-form{
+    width:90%;
+}
+
+.header .navbar{
+    position: absolute;
+    top:110%; right:-110%;
+    width:30rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background: bisque;
+}
+
+.header .navbar.active{
+    right:2rem;
+    transition: .4s linear;
+}
+
+.header .navbar a{
+    font-size: 2rem;
+    margin:2rem 2.5rem;
+    display: block;
+}
+
+}
+
+
+@media (max-width: 991px) {
+  .card {
+    width: calc(200% - 40px);
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    width: calc(200% - 40px);
+  }
+}
+@media (max-width: 450px) {
+  .card {
+    width: calc(200% - 40px);
+  }
+}
+
+
+
+
+  
+@media (max-width:450px){
+
+html{
+    font-size: 50%;
+}
+
+.heading{
+    font-size: 2.5rem;
+}
+
+.footer{
+    text-align: center;
+}
+}
+
+@media (max-width: 768px) {
+    .features .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+
+    .features .box-container .box h3 {
+        font-size: 2rem;
+    }
+
+    .features .box-container .box p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+    .features .box-container .box h3 {
+        font-size: 1.8rem;
+    }
+
+    .features .box-container .box p {
+        font-size: 1.1rem;
+    }
+}
+</style>
+</head>
+<body>
+    <a id="myLink" href=""></a>
+    <header class="header">
+      <a href="#" class="logo"> <i class="fas fa-smile"></i>Healthy Sangare </a>
+      <nav class="navbar">
+        <a href="way.html" id="products-link" disabled>products</a>
+        <a href="code.html">Code</a>
+        <a href="help.html">help</a>
+      </nav>
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+      </div>
+      <div id="login-form-container" style="display:none;">
+        <form id="login-form" action="i.php" method="post">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Password</label>
+          <div style="position: relative;">
+          <input type="password" id="password" name="password" required>
+          <i class="password-toggle fas fa-eye" id="password-toggle" onclick="togglePasswordVisibility()"></i>
+        </div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="terms-checkbox" required>
+            <label for="terms-checkbox">I agree to Sangare's terms and conditions</label>
+          </div>
+          <button type="submit" id="login-button" disabled>Login</button>
+        </form>
+        <div>
+            <a href="terms and coditions.html" target="_blank">Sangare terms and conditions</a>
+        </div>
+        <div class="links">
+          <a href="register.html">Register</a>
+          <a href="forgot.html">Forgot Password</a>
+        </div>
+      </div>
+      <!-- Add a welcome message container -->
+      <div id="welcome-message" style="display:none;"></div>
+    </header>
+    <!-- header section ends -->
+    <!-- home section starts  -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Fresh and <span>organic</span></h3>
+            <h3>Farm <span>Produce</span></h3>
+            <p>The best around</p>
+            <a class="btn"></a>  
+        </div>
+    </section>
+    <!-- home section ends -->
+    <!-- features section starts  -->
+    <section class="features" id="features">
+        <h1 class="heading">  <span></span> </h1>
+        <div class="box-container">
+            <div class="box">
+            <div class="feature-item">
+        <i class="fas fa-truck"></i>
+        <h2>Welcome!</h2>
+        <p>Thank you for choosing Our Website. We hope you enjoy browsing our selection of products and find something you love!</p>
+      </div>
+            </div>
+            <div class="box">
+            <div class="feature-item">
+        <i class="fas fa-clock"></i>
+        <h2> Login to Continue</h2>
+        <p>Please register first then login to continue.</p>
+      </div>
+            </div>
+            <div class="box">
+            <div class="feature-item">
+        <i class="fas fa-thumbs-up"></i>
+        <h2>Leave a Review</h2>
+        <p>We value your feedback! Please take a moment to leave a review on your experience with our website and products.</p>
+      </div>
+            </div>
+        </div>
+    </section>
+    <!--features section ends-->
+    <!-- review section starts  -->
+<section class="reviews" id="reviews">
+    <h1 class="heading"><span>Reviews</span> </h1>
+    <div class="card-gallery">
+        <div class="card-slide">
+          <div class="card">
+            <div class="card-image" style="background-image: url('https://images.pexels.com/photos/2110487/pexels-photo-2110487.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')">
+              <img src="https://images.pexels.com/photos/2110487/pexels-photo-2110487.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Card image 1">
+              <div class="card-overlay">
+                <p class="card-text">"I love the fresh vegetables from this farm!"</p>
+                <p class="card-author">- Jane Smith</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image" style="background-image: url('https://images.pexels.com/photos/7879829/pexels-photo-7879829.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')">
+              <img src="https://images.pexels.com/photos/7879829/pexels-photo-7879829.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Card image 2">
+              <div class="card-overlay">
+                <p class="card-text">"The CSA program is great for my family."</p>
+                <p class="card-author">- John Doe</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image" style="background-image: url('https://images.pexels.com/photos/8394942/pexels-photo-8394942.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')">
+                <img src="https://images.pexels.com/photos/8394942/pexels-photo-8394942.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Card image 3">
+                <div class="card-overlay">
+                  <p class="card-text">"The farm stand always has a great selection."</p>
+                  <p class="card-author">- Sarah Johnson</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image" style="background-image: url('https://images.pexels.com/photos/11598275/pexels-photo-11598275.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')">
+                <img src="https://images.pexels.com/photos/11598275/pexels-photo-11598275.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Card image 4">
+                <div class="card-overlay">
+                  <p class="card-text">"The farm-to-table dinners are amazing!"</p>
+                  <p class="card-author">- Mark Davis</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image" style="background-image: url('https://images.pexels.com/photos/6157041/pexels-photo-6157041.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')">
+                <img src="https://images.pexels.com/photos/6157041/pexels-photo-6157041.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Card image 5">
+                <div class="card-overlay">
+                  <p class="card-text">"I love supporting local farmers."</p>
+                  <p class="card-author">- Emily Brown</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.pexels.com/photos/7879978/pexels-photo-7879978.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')">
+                  <img src="https://images.pexels.com/photos/7879978/pexels-photo-7879978.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Card image 6">
+                  <div class="card-overlay">
+                    <p class="card-text">"The farm tour was a great experience for my family."</p>
+                    <p class="card-author">- James Lee</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pagination">
+            </div>
+          </div>
+    <br>
+    <br>
+    <br>
+<!-- footer section starts  -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3> Sangare <i class="fas fa-shopping-basket"></i> </h3>
+            <p>Enjoy time browsing for products of your choice.</p>
+        </div>
+        <div class="box">
+            <h3>Location</h3>
+            <a href="map.html" class="links"> <i class="fas fa-map-marker-alt"></i>Sangare gardens,Nyeri</a>
+        </div>
+        <div class="box">
+            <h3>Quick links</h3>
+            <a href="contact.html" class="links"> <i class="fas fa-arrow-right"></i> contact us </a>
+            <a href="aboutus.html" class="links"> <i class="fas fa-arrow-right"></i> about us </a>
+            <a href="media.html" class="links"> <i class="fas fa-arrow-right"></i> media </a>
+            <a href="terms and coditions.html" class="links"> <i class="fas fa-arrow-right"></i> Terms and Conditions </a>
+        </div>
+    </div>
+    <div class="credit">Sangare <span class="circle-letter">C</span> | 2023-2023</div>
+</section>
+<!--footer section ends-->
+<script>
+  
+function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      var passwordToggle = document.getElementById("password-toggle");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        passwordToggle.classList.remove("fa-eye");
+        passwordToggle.classList.add("fa-eye-slash");
+      } else {
+        passwordInput.type = "password";
+        passwordToggle.classList.remove("fa-eye-slash");
+        passwordToggle.classList.add("fa-eye");
+      }
+    }
+document.addEventListener("DOMContentLoaded", () => {
+  const loginFormContainer = document.getElementById("login-form-container");
+  const productsLink = document.getElementById("products-link");
+  const loginButton = document.getElementById("login-button");
+  const termsCheckbox = document.getElementById("terms-checkbox");
+  loginFormContainer.style.display = "block"; // Show the login form
+  termsCheckbox.addEventListener("change", () => {
+    loginButton.disabled = !termsCheckbox.checked;
+  });
+  productsLink.addEventListener("click", (event) => {
+    if (!isLoggedIn) {
+      event.preventDefault();
+      alert("Please log in first.");
+    }
+  });
+});
+const menuBtn = document.querySelector("#menu-btn");
+const navbar = document.querySelector(".navbar");
+menuBtn.addEventListener("click", () => {
+  navbar.classList.toggle("active");
+});
+const loginBtn = document.getElementById("login-btn");
+const loginFormContainer = document.getElementById("login-form-container");
+const welcomeMessage = document.getElementById("welcome-message");
+const productsLink = document.getElementById("products-link");
+let isLoginFormVisible = false;
+let isLoggedIn = false;
+// Show or hide login form when login button is clicked
+loginBtn.addEventListener("click", () => {
+  loginFormContainer.style.display = isLoginFormVisible ? "none" : "block";
+  isLoginFormVisible = !isLoginFormVisible;
+});
+// Hide login form when the user clicks outside the form
+window.addEventListener("click", (event) => {
+  if (event.target === loginFormContainer) {
+    loginFormContainer.style.display = "none";
+    isLoginFormVisible = false;
+  }
+});
+// Login functionality
+function login(username, password) {
+  const formData = new FormData();
+  formData.append("username", username);
+  formData.append("password", password);
+  fetch("i.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (data.result === "success") {
+        isLoggedIn = true;
+        loginFormContainer.style.display = "none"; // Hide the login form
+        showWelcomeMessage(username); // Show the welcome message
+        productsLink.removeAttribute("disabled"); // Enable the products link
+        setTimeout(() => {
+          welcomeMessage.style.display = "none"; // Hide the welcome message after 2 seconds
+        }, 2000);
+      } else {
+        alert("Invalid username or password");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      alert(" Please try again");
+    });
+}
+// Function to show the welcome message
+function showWelcomeMessage(username) {
+  welcomeMessage.textContent = "Welcome " + username;
+  welcomeMessage.style.display = "block";
+}
+const loginForm = document.getElementById("login-form");
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const username = event.target.username.value;
+  const password = event.target.password.value;
+  login(username, password);
+});
+// Simulate forgot password functionality
+const forgotPasswordLink = document.querySelector("#login-form-container .links a:last-child");
+forgotPasswordLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  // Redirect to forgot password page
+  window.location.href = "forgot.html";
+});
+// Redirect to register page when register link is clicked
+const registerLink = document.querySelector("#login-form-container .links a:first-child");
+registerLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.href = "register.html";
+});
+// Check login status every 10 seconds
+setInterval(() => {
+  if (!isLoggedIn) {
+    loginFormContainer.style.display = "block"; // Show the login form if not logged in
+    productsLink.setAttribute("disabled", "disabled"); // Disable the products link
+  }
+}, 10000);
+// Sliding card gallery functionality
+const cards = document.querySelectorAll('.card');
+const slide = document.querySelector('.card-slide');
+const pagination = document.querySelector('.pagination');
+let currentSlide = 0;
+let autoSlideInterval;
+
+function showSlides() {
+  const startIndex = currentSlide * getCardsPerView();
+  const endIndex = startIndex + getCardsPerView();
+  const cardsToShow = Array.from(cards).slice(startIndex, endIndex);
+  slide.innerHTML = '';
+  cardsToShow.forEach((card) => {
+    slide.appendChild(card);
+  });
+  updatePagination();
+}
+
+function nextSlide() {
+  currentSlide++;
+  if (currentSlide >= Math.ceil(cards.length / getCardsPerView())) {
+    currentSlide = 0;
+  }
+  showSlides();
+  resetAutoSlideTimer();
+}
+
+function prevSlide() {
+  currentSlide--;
+  if (currentSlide < 0) {
+    currentSlide = Math.ceil(cards.length / getCardsPerView()) - 1;
+  }
+  showSlides();
+  resetAutoSlideTimer();
+}
+
+function getCardsPerView() {
+  return window.innerWidth < 768 ? 1 : 3;
+}
+
+function createPagination() {
+  const numPages = Math.ceil(cards.length / getCardsPerView());
+  let paginationHtml = '';
+  for (let i = 0; i < numPages; i++) {
+    paginationHtml += '<button class="page-dot"></button>';
+  }
+  pagination.innerHTML = paginationHtml;
+  updatePagination();
+  const pageDots = document.querySelectorAll('.page-dot');
+  pageDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentSlide = index;
+      showSlides();
+      resetAutoSlideTimer();
+    });
+  });
+}
+
+function updatePagination() {
+  const pageDots = document.querySelectorAll('.page-dot');
+  pageDots.forEach((dot, index) => {
+    if (index === currentSlide) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function autoSlide() {
+  autoSlideInterval = setInterval(() => {
+    nextSlide();
+  }, 5000);
+}
+
+function resetAutoSlideTimer() {
+  clearInterval(autoSlideInterval);
+  autoSlide();
+}
+
+createPagination();
+showSlides();
+autoSlide();
+
+// Stop automatic sliding on hover
+slide.addEventListener('mouseover', () => {
+  clearInterval(autoSlideInterval);
+});
+
+// Resume automatic sliding on mouseout
+slide.addEventListener('mouseout', () => {
+  resetAutoSlideTimer();
+});
+
+// Manual sliding with arrow keys
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') {
+    prevSlide();
+  } else if (event.key === 'ArrowRight') {
+    nextSlide();
+  }
+});
+
+// Manual sliding with touch gestures (swipe)
+let touchStartX = 0;
+slide.addEventListener('touchstart', (event) => {
+  touchStartX = event.touches[0].clientX;
+});
+
+slide.addEventListener('touchend', (event) => {
+  const touchEndX = event.changedTouches[0].clientX;
+  const touchThreshold = 50;
+
+  if (touchStartX - touchEndX > touchThreshold) {
+    nextSlide();
+  } else if (touchEndX - touchStartX > touchThreshold) {
+    prevSlide();
+  }
+});
+
+// Auto-scroll if no manual interaction for 10 seconds
+let idleTimer;
+const idleTimeThreshold = 10000;
+
+function startIdleTimer() {
+  idleTimer = setTimeout(() => {
+    nextSlide();
+  }, idleTimeThreshold);
+}
+
+function resetIdleTimer() {
+  clearTimeout(idleTimer);
+  startIdleTimer();
+}
+
+document.addEventListener('mousemove', resetIdleTimer);
+document.addEventListener('keydown', resetIdleTimer);
+document.addEventListener('touchstart', resetIdleTimer);
+document.addEventListener('touchend', resetIdleTimer);
+</script>
+</body>
+</html>

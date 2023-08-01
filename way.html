@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+    <meta name="keywords" content="healthy, gardens, Sangare">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.your-website.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <title>Veggies Website</title>
+  <style>
+    :root {
+  --green: green;
+  --white: white;
+  --light-color: black;
+  --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+  --border: .2rem solid rgba(0, 0, 0, .1);
+  --outline: .1rem solid rgba(0, 0, 0, .1);
+  --outline-hover: .2rem solid var(--black);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: ivory;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: bisque;
+}
+
+header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+header button i {
+  color: black;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+0
+.image-thumbnails {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.thumbnail {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: gray;
+}
+
+.thumbnail.active {
+  background-color: green;
+}
+
+.categories {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 span {
+  font-size: clamp(20px, 4vw, 52px);
+  margin: 0;
+}
+
+.category {
+  margin-top: 20px;
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.green {
+  background-color: green;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.black {
+  background-color: black;
+}
+
+
+.footer {
+  background: ivory;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box h3 i {
+  color: var(--green);
+}
+
+.footer .box-container .box .links {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box .links i {
+  color: var(--green);
+  padding-right: 0.5rem;
+}
+
+.footer .box-container .box .links:hover i {
+  padding-right: 2rem;
+}
+
+.footer .box-container .box p {
+  line-height: 1.8;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .credit {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 2rem;
+  color: var(--black);
+  border-top: var(--border);
+}
+
+.footer .credit span {
+  color: var(--green);
+}
+
+
+.circle-letter {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+    }
+
+/* Media Queries */
+
+/* Phones */
+@media only screen and (max-width: 768px) {
+  .slideshow {
+    height: 250px;
+  }
+  
+  .thumbnail {
+    width: 5px;
+    height: 5px;
+    margin-right: 5px;
+  }
+  
+  .categories {
+    margin-top: 30px;
+  }
+  
+  .category {
+    width: 200px;
+    height: 40px;
+  }
+
+}
+
+/* Tablets */
+@media only screen  and (max-width: 1200px) {
+  .slideshow {
+    height: 300px;
+  }
+  
+  .thumbnail {
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
+  }
+  
+  .categories {
+    margin-top: 40px;
+  }
+  
+  .category {
+    width: 250px;
+    height: 45px;
+  }
+  
+}
+
+
+@media (max-width:991px){
+
+html{
+    font-size: 55%;
+}
+
+.header{
+    padding:2rem;
+}
+
+section{
+    padding:2rem;
+}
+
+}
+
+
+
+
+@media (max-width:450px){
+
+html{
+    font-size: 50%;
+}
+
+.heading{
+    font-size: 2.5rem;
+}
+
+.footer{
+    text-align: center;
+}
+}
+
+
+
+  </style>
+</head>
+<body>
+<header>
+  <button onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+  <button onclick="goForward()"><i class="fas fa-arrow-right"></i></button>
+</header>
+<section class="slideshow">
+  <img src="https://images.pexels.com/photos/533384/pexels-photo-533384.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+       alt="Image 1">
+  <img src="https://images.pexels.com/photos/14208719/pexels-photo-14208719.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+       alt="Image 2">
+  <img src="https://images.pexels.com/photos/3026802/pexels-photo-3026802.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+       alt="Image 3">
+  <img src="https://images.pexels.com/photos/2255920/pexels-photo-2255920.jpeg?auto=compress&cs=tinysrgb&w=400"
+       alt="Image 4">
+  <img src="https://images.pexels.com/photos/5677794/pexels-photo-5677794.jpeg?auto=compress&cs=tinysrgb&w=400"
+       alt="Image 5">
+  <img src="https://images.pexels.com/photos/7657338/pexels-photo-7657338.jpeg?auto=compress&cs=tinysrgb&w=400"
+       alt="Image 6">
+</section>
+
+<aside class="image-thumbnails">
+  <div class="thumbnail active"></div>
+  <div class="thumbnail"></div>
+  <div class="thumbnail"></div>
+  <div class="thumbnail"></div>
+  <div class="thumbnail"></div>
+  <div class="thumbnail"></div>
+</aside>
+
+<div class="categories">
+  <h1><span>Categories</span></h1>
+  <div class="category green">
+    <a href="products1.html">Vegetables</a>
+  </div>
+  <div class="category orange">
+    <a href="products2.html">Fruits</a>
+  </div>
+  <div class="category black">
+    <a href="products3.html">Dairy</a>
+  </div>
+</div>
+<br /><br /><br /><br /><br />
+<section class="footer">
+  <div class="box-container">
+      <div class="box">
+          <h3> Sangare <i class="fas fa-shopping-basket"></i> </h3>
+          <p>Enjoy time browsing for products of your choice.</p>
+      </div>
+      <div class="box">
+          <h3>Location</h3>
+          <a href="map.html" class="links"> <i class="fas fa-map-marker-alt"></i>Sangare gardens,Nyeri</a>
+      </div>
+      <div class="box">
+          <h3>Quick links</h3>
+          <a href="contact.html" class="links"> <i class="fas fa-arrow-right"></i> contact us </a>
+          <a href="aboutus.html" class="links"> <i class="fas fa-arrow-right"></i> about us </a>
+          <a href="media.html" class="links"> <i class="fas fa-arrow-right"></i> media </a>
+          <a href="terms and coditions.html" class="links"> <i class="fas fa-arrow-right"></i> Terms and Conditions </a>
+      </div>
+  </div>
+  <div class="credit">Sangare <span class="circle-letter">C</span> | 2023-2023</div>
+</section>
+
+<script>
+  function goBack() {
+    window.history.back();
+  }
+  function goForward() {
+  window.history.forward();
+}
+  // Slideshow logic
+  let slideIndex = 0;
+  const images = document.querySelectorAll('.slideshow img');
+  const thumbnails = document.querySelectorAll('.thumbnail');
+
+  function showSlide(index) {
+    images.forEach(image => image.style.opacity = 0);
+    images[index].style.opacity = 1;
+
+    thumbnails.forEach(thumbnail => thumbnail.classList.remove('active'));
+    thumbnails[index].classList.add('active');
+  }
+
+  showSlide(0); // Show the first slide when the page loads
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % images.length;
+    showSlide(slideIndex);
+  }
+
+  setInterval(nextSlide, 5000);
+</script>
+</body>
+</html>

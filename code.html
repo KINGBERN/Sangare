@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+  <meta name="keywords" content="healthy, gardens, Sangare">
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.your-website.com">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Healthy Sangare Gardens</title>
+    <style>
+       body {
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: ivory;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: bisque;
+}
+
+header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+header button i {
+  color: black;
+}
+
+#popupWindow {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: bisque;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #popupContent {
+    margin-bottom: 10px;
+  }
+
+  #popupWindow .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: bisque;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: darkgreen;
+}
+
+
+/* Add margin to the surname input */
+#surname {
+  margin-bottom: 10px;
+}
+
+/* Media Queries */
+
+/* Phones */
+@media only screen and (max-width: 480px) {
+  .container {
+    max-width: 90%;
+    margin-top: 50px;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 481px) and (max-width: 1200px) {
+  .container {
+    max-width: 60%;
+    margin-top: 80px;
+  }
+}
+
+/* Larger screens */
+@media only screen and (min-width: 1441px) {
+  .container {
+    max-width: 40%;
+    margin-top: 100px;
+  }
+}
+
+    </style>
+</head>
+<body>
+  <header>
+    <button onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+    <button onclick="goForward()"><i class="fas fa-arrow-right"></i></button>
+  </header>
+    <div class="container">
+        <h2>Check Code</h2>
+        <div class="form-group">
+            <form method="POST" action="vii.php" id="codeForm">
+                <label class="label" for="email">Email</label>
+                <input type="email" id="email" name="email" required><br>
+                <label class="label" for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" required><br>
+                <input type="submit" value="Submit" class="submit-button">
+            </form>
+        </div>
+    </div>
+    <div id="popupWindow" style="display: none;">
+      <div id="popupContent"></div>
+      <span class="close" onclick="closePopup()">&times;</span>
+    </div>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        
+        function goForward() {
+            window.history.forward();
+        }
+
+        
+
+        // Function to display the pop-up
+  function displayPopup(content) {
+    document.getElementById("popupContent").innerText = content;
+    document.getElementById("popupWindow").style.display = "block";
+  }
+
+  // Function to close the pop-up
+  function closePopup() {
+    document.getElementById("popupWindow").style.display = "none";
+  }
+
+  // Modify the code to use the displayPopup() function
+  document.getElementById("codeForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var email = document.getElementById("email").value;
+    var surname = document.getElementById("surname").value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "vii.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = xhr.responseText;
+        if (response === "not_found") {
+          alert("Code not found!");
+        } else if (response === "invalid_data") {
+          alert("Invalid email or surname!");
+        } else {
+          displayPopup(response); // Display the pop-up with the response
+        }
+      }
+    };
+    xhr.send("email=" + email + "&surname=" + surname);
+  });
+    </script>
+</body>
+</html>

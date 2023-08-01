@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+    <meta name="keywords" content="healthy, gardens, Sangare">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.your-website.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Healthy Sangare Gardens</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+    <style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: ivory;
+}
+header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: bisque;
+    }
+    header button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    header button i {
+      color: black;
+    }
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side {
+    background-color: lightblue;
+}
+
+.right-side {
+    background-color: lightgreen;
+}
+
+.right-side a,
+  .left-side a {
+    text-decoration: none;
+    position: relative;
+    color: black; /* Change to your desired text color */
+  }
+
+  .right-side a::after,
+  .left-side a::after {
+    content: '';
+    position: absolute;
+    bottom: 12px; /* Adjust this value to control the distance of dots from the text */
+    left: 0;
+    width: 100%;
+    height: 6px; /* Adjust the height of dots */
+    display: block;
+    background-image: radial-gradient(circle, black 25%, transparent 0);
+    background-size: 5px 5px; /* Adjust the size of the circles */
+    background-position: 0 0; /* Adjust the position of the circles */
+    animation: blink 1s infinite;
+  }
+
+  .right-side a::before,
+  .left-side a::before {
+    content: '';
+    position: absolute;
+    bottom: 12px; /* Adjust this value to control the distance of dots from the text */
+    left: 0;
+    width: 100%;
+    height: 6px; /* Adjust the height of dots */
+    display: block;
+    background-image: radial-gradient(circle, black 25%, transparent 0);
+    background-size: 5px 5px; /* Adjust the size of the circles */
+    background-position: 0 0; /* Adjust the position of the circles */
+    animation: blink 1s 0.5s infinite; /* Start the animation with a 0.5s delay to create the blinking effect */
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 5px 0; /* Adjust the distance between the circles */
+    }
+  }
+.center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.fa-icon {
+    font-size: 64px;
+    color: white;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: bisque;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.popup-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.popup-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+/* Updated styling for the <p> element */
+a p {
+    text-decoration: none !important;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Media Queries */
+
+/* Phones */
+@media only screen and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-side, .right-side {
+        flex: 1;
+        height: 200px;
+    }
+
+    .center {
+        flex: 1;
+        font-size: 18px;
+    }
+
+    .fa-icon {
+        font-size: 48px;
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left-side, .right-side {
+        flex: 1;
+        height: auto;
+    }
+
+    .center {
+        flex: 2;
+        font-size: 24px;
+    }
+
+    .fa-icon {
+        font-size: 64px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <button onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+      </header>
+    <div class="container">
+        <div class="left-side">
+            <a href="pick.up.html">
+                <i class="fas fa-shopping-bag fa-icon"></i>
+                <p>pick-up</p>
+            </a>
+        </div>
+        <div class="center">
+        </div>
+        <div class="right-side">
+            <a href="delivery.html">
+                <i class="fas fa-truck fa-icon"></i>
+                <p>delivery</p>
+            </a>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <div class="popup-message">Click the icon bag to proceed to pick-up and the truck to delivery.</div>
+            <div class="popup-buttons">
+                <button onclick="closePopup()">OK</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+    window.history.back();
+  }
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

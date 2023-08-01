@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+    <meta name="keywords" content="healthy, gardens, Sangare">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.your-website.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthy Sangare Gardens</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html,
+body {
+  position: relative;
+  height: 100%;
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: bisque;
+    }
+    header button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    header button i {
+      color: black;
+    }
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media queries for phones, tablets, and iPads */
+@media (max-width: 480px) {
+  /* Phones */
+  body {
+    font-size: 12px;
+  }
+
+  swiper-slide {
+    font-size: 16px;
+  }
+}
+header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header {
+    padding: 5px;
+  }
+
+  header button {
+    font-size: 16px;
+  }
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Tablets */
+  body {
+    font-size: 14px;
+  }
+
+  swiper-slide {
+    font-size: 18px;
+  }
+}
+header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header {
+    padding: 5px;
+  }
+
+  header button {
+    font-size: 16px;
+  }
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  /* iPads */
+  body {
+    font-size: 16px;
+  }
+
+  swiper-slide {
+    font-size: 20px;
+  }
+}
+header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header {
+    padding: 5px;
+  }
+
+  header button {
+    font-size: 16px;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <button onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+  </header>
+  <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true">
+    <swiper-slide><img src="https://images.pexels.com/photos/6994261/pexels-photo-6994261.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 1"></swiper-slide>
+  <swiper-slide><img src="https://images.pexels.com/photos/8633675/pexels-photo-8633675.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 2"></swiper-slide>
+  <swiper-slide><img src="https://images.pexels.com/photos/7890119/pexels-photo-7890119.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 3"></swiper-slide>
+  <swiper-slide><img src="https://images.pexels.com/photos/7457469/pexels-photo-7457469.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 4"></swiper-slide>
+  <swiper-slide><img src="https://images.pexels.com/photos/8286632/pexels-photo-8286632.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 5"></swiper-slide>
+  <swiper-slide><img src="https://images.pexels.com/photos/13394025/pexels-photo-13394025.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 6"></swiper-slide>
+  <swiper-slide><img src="https://images.pexels.com/photos/3265437/pexels-photo-3265437.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 7"></swiper-slide>
+  <swiper-slide><img src="https://images.pexels.com/photos/2817549/pexels-photo-2817549.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 8"></swiper-slide>
+  <swiper-slide><img src="https://images.pexels.com/photos/3323687/pexels-photo-3323687.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 9"></swiper-slide>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+  <script>
+    function goBack() {
+    window.history.back();
+  }
+  </script>
+</body>
+</html>

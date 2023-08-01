@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+  <meta name="keywords" content="healthy, gardens, Sangare">
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.your-website.com">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Healthy Sangare Gardens</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: ivory;
+      background-size: cover;
+      background-position: center;
+    }
+    .about-us {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: bisque;
+    }
+    header button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    header button i {
+      color: black;
+    }
+    .profile {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 20px;
+      transition: transform 0.3s ease;
+      max-width: 100%;
+    }
+
+    .profile:hover img {
+      transform: scale(2.0);
+    }
+
+    .profile p {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .profile:hover::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      background-color: #000;
+      left: -10px;
+    }
+
+    .description {
+      max-width: 700px;
+    }
+
+    .description p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .description .profile {
+      margin-top: 30px;
+      margin-bottom: 60px;
+    }
+
+    .description .profile img {
+      width: 80px;
+      height: 80px;
+      margin-right: 20px;
+      transition: transform 0.3s ease;
+      max-width: 100%;
+    }
+
+    .description .profile:hover img {
+      transform: scale(2.0);
+    }
+
+    .description .profile p {
+      font-size: 16px;
+    }
+
+    /* Media queries for phones and tablets */
+    @media (max-width: 480px) {
+      .about-us {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .profile {
+        margin-bottom: 30px;
+      }
+
+      .profile img {
+        width: 80px;
+        height: 80px;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .description .profile {
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      .description .profile img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .description p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-us {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .profile {
+        margin-bottom: 30px;
+      }
+
+      .profile img {
+        width: 80px;
+        height: 80px;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .description .profile {
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      .description .profile img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .description p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .about-us {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .profile {
+        margin-bottom: 30px;
+      }
+
+      .profile img {
+        width: 80px;
+        height: 80px;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .description .profile {
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      .description .profile img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .description p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+  </header>
+  <div class="about-us">
+    <div class="profile">
+      <img src="https://images.pexels.com/photos/762080/pexels-photo-762080.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+      <p>John Doe<br>CEO</p>
+    </div>
+    <div class="description">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at velit eget arcu malesuada blandit sit amet et nisi. Vestibulum sit amet posuere velit. Sed consequat quam vel dui feugiat, vitae pellentesque enim malesuada. Sed vel mauris quis metus varius bibendum. Pellentesque in mauris eu magna lacinia molestie. Nulla facilisi. Donec sagittis sapien vel mi euismod, in iaculis nulla dictum. Sed faucibus felis eu tellus convallis, vel blandit purus egestas. Proin ac turpis in odio consequat auctor. Nullam at fermentum lacus, id rutrum purus.</p>
+      <div class="profile">
+        <img src="https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        <p>Jane Doe<br>COO</p>
+      </div>
+      <p>Etiam accumsan ligula quis eros imperdiet feugiat. Praesent luctus, felis vel blandit bibendum, velit purus tempus nisi, at ullamcorper sapien sapien eget dolor. Fusce maximus sapien eget tortor volutpat, non gravida neque eleifend. Sed bibendum sapien a orci lobortis eleifend. Nulla sed ligula quis purus venenatis feugiat at id lorem. Donec lobortis eget nulla a luctus. Fusce consectetur velit eget feugiat varius. Donec vel mi at ipsum malesuada ullamcorper. Duis eget nunc rutrum, aliquam lorem a, commodo libero. Suspendisse posuere hendrerit diam, eu iaculis lectus feugiat a.</p>
+      <div class="profile">
+        <img src="https://images.pexels.com/photos/214576/pexels-photo-214576.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        <p>Mark Smith<br>CFO</p>
+      </div>
+      <p>Nam auctor elit eu leo maximus consectetur. Donec accumsan lacus sit amet neque ullamcorper, sed tristique sapien bibendum. Maecenas dictum dapibus quam a dictum. Integer maximus ex vel tellus dignissim, vel tristique nulla pulvinar. Proin molestie augue ac turpis eleifend, vel rhoncus sapien gravida. Sed vel elit elit. Nulla ultrices, nibh vitae sagittis consequat, libero nulla consequat dolor, id volutpat odio ipsum nec augue. Sed eu nisi sapien. Pellentesque pellentesque augue nunc, quis tempor quam pharetra sed. Integer hendrerit magna sed lobortis tristique. Vivamus suscipit, velit vel sollicitudin porttitor, justo quam commodo mauris, sit amet maximus turpis elit eget elit.</p>
+    </div>
+  </div>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    const profile = document.querySelector('.profile');
+    profile.addEventListener('mouseover', () => {
+      profile.classList.add('hovered');
+    });
+    profile.addEventListener('mouseout', () => {
+      profile.classList.remove('hovered');
+    });
+    const image = document.querySelector('.profile img');
+    image.addEventListener('mouseover', () => {
+      // Add code to display additional information or trigger animation
+    });
+    image.addEventListener('mouseout', () => {
+      // Add code to hide additional information or reset animation
+    });
+  </script>
+</body>
+</html>

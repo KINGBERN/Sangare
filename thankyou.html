@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+  <meta name="keywords" content="healthy, gardens, Sangare">
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.your-website.com">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dialog-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-box button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.dialog-box .yes-button {
+  background-color: red;
+  color: white;
+}
+
+.dialog-box .no-button {
+  background-color: green;
+  color: white;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .dialog-box {
+    padding: 10px;
+  }
+  
+  .dialog-box button {
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dialog-box {
+    padding: 5px;
+  }
+  
+  .dialog-box button {
+    margin: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="C:\Users\Steve Bern\Downloads\My project-1 (4).jpg" alt="">
+  </div>
+
+  <div class="dialog-box">
+    <p>Do you want to leave a review?</p>
+    <button class="yes-button">Yes</button>
+    <button class="no-button">No</button>
+  </div>
+  
+  <div class="content">
+    <!-- Your page content goes here -->
+  </div>
+
+  <script>
+    // Set the duration for displaying the "thank you.html" page in milliseconds
+    const duration = 5000; // 5 seconds
+
+    let canRedirect = false; // Flag to track if redirection is allowed
+
+    // Function to redirect back to "home.html"
+    const redirect = () => {
+      if (canRedirect) {
+        window.location.href = "home.html";
+      }
+    };
+
+    // Wait for the specified duration, then redirect
+    setTimeout(redirect, duration);
+
+    // Function to show the dialog box
+    const showDialogBox = () => {
+      const dialogBox = document.querySelector('.dialog-box');
+      const yesButton = document.querySelector('.yes-button');
+      const noButton = document.querySelector('.no-button');
+      
+      // Add event listener to the yes button
+      yesButton.addEventListener('click', () => {
+        window.location.href = "review.html";
+      });
+      
+      // Add event listener to the no button
+      noButton.addEventListener('click', () => {
+        canRedirect = true; // Set the flag to allow redirection
+        dialogBox.style.display = 'none';
+        setTimeout(redirect, duration);
+      });
+      
+      dialogBox.style.display = 'block';
+    };
+    
+    // Call the showDialogBox function when the page is loaded
+    window.addEventListener('load', showDialogBox);
+  </script>
+</body>
+</html>

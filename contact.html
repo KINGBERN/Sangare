@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="Brief description of Healthy Sangare Gardens.">
+  <meta name="keywords" content="healthy, gardens, Sangare">
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.your-website.com">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-color: ivory;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.contact-image {
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.contact-info {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.contact-info h2 {
+  margin-top: 0;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-info ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.contact-info li {
+  margin-bottom: 5px;
+}
+ .call-link,
+    .message-link {
+      display: block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: black; /* Set the text color to transparent */
+      cursor: pointer;
+      position: relative;
+    }
+     .call-link::after,
+     .message-link::after {
+      content: '';
+      position: absolute;
+      bottom: 2px; /* Adjust this value to control the distance of dots from the text */
+      left: 0;
+      width: 100%;
+      height: 2px; /* Adjust the height of dots */
+      display: block;
+      background-image: radial-gradient(circle, black 25%, transparent 0);
+      background-size: 6px 6px; /* Adjust the size of the circles */
+      background-position: 0 0; /* Adjust the position of the circles */
+      animation: blink 1s infinite;
+    }
+
+     .call-link::before,
+     .message-link::before {
+      content: '';
+      position: absolute;
+      bottom: 2px; /* Adjust this value to control the distance of dots from the text */
+      left: 0;
+      width: 100%;
+      height: 2px; /* Adjust the height of dots */
+      display: block;
+      background-image: radial-gradient(circle, black 25%, transparent 0);
+      background-size: 6px 6px; /* Adjust the size of the circles */
+      background-position: 0 0; /* Adjust the position of the circles */
+      animation: blink 1s 0.5s infinite; /* Start the animation with a 0.5s delay to create the blinking effect */
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 3px 0; /* Adjust the distance between the circles */
+      }
+    }
+.sidebar {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 100px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  display: none; /* initially hidden */
+}
+
+.sidebar.active {
+  display: block; /* show when active */
+}
+
+.sidebar i {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  margin-right: 5px; /* added margin to create spacing between icons */
+}
+
+.sidebar .message-icon {
+  margin-top: 10px;
+}
+
+/* Remove margin from the last icon to prevent extra spacing */
+.sidebar i:last-child {
+  margin-right: 0;
+}
+
+/* Media queries for phones and tablets */
+@media (max-width: 480px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+
+  .sidebar {
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+
+  .sidebar {
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+
+  .sidebar {
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+  </style>
+  <script>
+    function showSidebar(imageSrc, phoneNumber) {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.innerHTML = '';
+      var callIcon = document.createElement('i');
+      callIcon.classList.add('fas', 'fa-phone-alt');
+      callIcon.addEventListener('click', function () {
+        makeCall(phoneNumber);
+      });
+      var messageIcon = document.createElement('i');
+      messageIcon.classList.add('fas', 'fa-envelope');
+      messageIcon.addEventListener('click', function () {
+        sendMessage(phoneNumber);
+      });
+      sidebar.appendChild(callIcon);
+      sidebar.appendChild(messageIcon);
+      sidebar.classList.add('active'); // show the sidebar
+    }
+    function makeCall(phoneNumber) {
+      // Replace the phone number with the actual number to call
+      window.location.href = 'tel:' + phoneNumber;
+    }
+    function sendMessage(phoneNumber) {
+      // Replace the phone number with the actual number to message
+      window.location.href = 'sms:' + phoneNumber;
+    }
+  </script>
+</head>
+<body>
+  <div class="contact-container">
+    <img class="contact-image" src="https://images.pexels.com/photos/1122335/pexels-photo-1122335.jpeg?auto=compress&cs=tinysrgb&w=400"  alt="">
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p>Call us at:</p>
+      <ul>
+        <li><span class="call-link" onclick="showSidebar(this.src, '+254720588737')">Phone number 1: +254720588737</span></li>
+        <li><span class="call-link" onclick="showSidebar(this.src, '+254707789578')">Phone number 2: +254707789578</span></li>
+        <li><span class="call-link" onclick="showSidebar(this.src, '+254707789578')">Phone number 3: +254707789578</span></li>
+      </ul>
+    </div>
+  </div>
+  <div id="sidebar" class="sidebar"></div>
+</body>
+</html>

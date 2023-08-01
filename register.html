@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+  <meta name="keywords" content="healthy, gardens, Sangare">
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.your-website.com">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Healthy Sangare Gardens</title>
+  <style>
+    /* Common styles */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: ivory;
+    }
+    form {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: bisque;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    #password-strength {
+      margin-top: 0px;
+      height: 8px;
+      border-radius: 3px;
+      width: 30px;
+      margin-bottom: 10px;
+    }
+
+    #password-strength.weak {
+      background-color: red;
+    }
+
+    #password-strength.fair {
+      background-color: orange;
+    }
+
+    #password-strength.strong {
+      background-color: green;
+    }
+
+    #password-strength.extremely-strong {
+      background-color: purple;
+    }
+
+    .password-toggle {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 1;
+    }
+    
+
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Red-orange style for register button */
+    input[type="submit"].red-orange {
+      background-color: #e74c3c;
+    }
+
+    /* Green-black style for register button */
+    input[type="submit"].green-black {
+      background-color: #27ae60;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 200px;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    option {
+      padding: 8px;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background-color: bisque;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .popup-message {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .popup-buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .popup-buttons button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: green;
+    }
+
+/* Updated styles for generate and save buttons */
+#generate-btn {
+  display: block;
+  width: 50%;
+  height: 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#generate-btn {
+  background-color: #27ae60;
+}
+
+#generate-btn:disabled {
+  background-color: #c3c3c3;
+  cursor: not-allowed;
+}
+    /* Media Queries */
+
+    /* Phones */
+    @media only screen and (max-width: 480px) {
+      form {
+        width: 90%;
+      }
+
+      input[type="submit"] {
+        font-size: 14px;
+      }
+    }
+
+    /* iPads and Tablets */
+    @media only screen and (min-width: 481px) and (max-width: 1200px) {
+      form {
+        width: 60%;
+      }
+
+      input[type="submit"] {
+        font-size: 16px;
+      }
+    }
+
+    /* Larger screens */
+    @media only screen and (min-width: 1441px) {
+      form {
+        width: 40%;
+      }
+
+      input[type="submit"] {
+        font-size: 18px;
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var isGenerateClicked = false;
+    function generateCode() {
+      var number = Math.floor(100000 + Math.random() * 900000); // Generate 6-digit code
+      document.getElementById("generatedcode").value = number;
+      document.getElementById("generate-btn").disabled = true;
+      isGenerateClicked = true;
+      showSurnameQuestion();
+    }
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var surname = document.getElementById("surname").value;
+      var generatedNumber = document.getElementById("generatedcode").value;
+
+      // Validate username
+      if (username === "") {
+        alert("Please enter your username.");
+        return false;
+      }
+      // Validate email
+      if (email === "") {
+        alert("Please enter your email.");
+        return false;
+      }
+      // Validate generated code
+      if (!isGenerateClicked || generatedNumber === "") {
+        alert("Please generate a code.");
+        return false;
+      }
+      // Validate password length and strength
+      if (password.length < 8) {
+        alert("Password should be at least 8 characters long.");
+        return false;
+      }
+      var passwordStrength = calculatePasswordStrength(password);
+      if (passwordStrength === "weak") {
+        alert("Please provide a strong password. It should include at least one capital letter, one number, and one special character.");
+        return false;
+      } else if (passwordStrength === "fair") {
+        alert("Please provide a strong password. It should include at least one capital letter, one number, and one special character.");
+        return false;
+      }
+      // Validate surname
+      if (surname === "") {
+        alert("Please enter your surname.");
+        return false;
+      }
+      return true;
+    }
+
+    function calculatePasswordStrength(password) {
+      var hasUppercase = /[A-Z]/.test(password);
+      var hasNumber = /[0-9]/.test(password);
+      var hasSpecialChar = /[$&+,:;=?@#|'<>.^*()%!-]/.test(password);
+      // Check password strength
+      if (password.length < 10 && (hasUppercase || hasNumber || hasSpecialChar)) {
+        document.getElementById("password-strength").className = "fair";
+        return "fair";
+      } else if (password.length >= 10 && (hasUppercase || hasNumber || hasSpecialChar)) {
+        document.getElementById("password-strength").className = "strong";
+        return "strong";
+      } else if (password.length >= 10 && hasUppercase && hasNumber && hasSpecialChar) {
+        document.getElementById("password-strength").className = "extremely-strong";
+        return "extremely strong";
+      }
+      document.getElementById("password-strength").className = "weak";
+      return "weak";
+    }
+
+    function closePopup() {
+      var popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      var passwordToggle = document.getElementById("password-toggle");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        passwordToggle.classList.remove("fa-eye");
+        passwordToggle.classList.add("fa-eye-slash");
+      } else {
+        passwordInput.type = "password";
+        passwordToggle.classList.remove("fa-eye-slash");
+        passwordToggle.classList.add("fa-eye");
+      }
+    }
+
+    function showSurnameQuestion() {
+      var surnameLabel = document.getElementById("surname-label");
+      var surnameInput = document.getElementById("surname");
+      surnameLabel.innerHTML = "What's your surname?";
+      surnameLabel.classList.remove("hidden");
+      surnameInput.classList.remove("hidden");
+    }
+  </script>
+</head>
+<body>
+  <form action="ii.php" method="post" onsubmit="return validateForm()">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="generatedcode">Generate Code</label>
+    <input type="text" id="generatedcode" name="generatedcode" readonly>
+    <button type="button" id="generate-btn" onclick="generateCode()">Generate</button>
+    <label id="surname-label" class="hidden"></label>
+    <input type="text" id="surname" name="surname" class="hidden">
+    <label for="password">Password</label>
+    <div style="position: relative;">
+      <input type="password" id="password" name="password" onkeyup="calculatePasswordStrength(this.value)" required>
+      <i class="password-toggle fas fa-eye" id="password-toggle" onclick="togglePasswordVisibility()"></i>
+      <div id="password-strength"></div>
+    </div>
+    <input type="submit" value="Register" class="green-black">
+  </form>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <div class="popup-message">IF YOU HAVE ALREADY REGISTERED, PLEASE GO BACK AND LOGIN BECAUSE YOUR DETAILS WILL NOT BE STORED AGAIN BY THE PAGE. GENERATE A CODE WHICH YOU CAN USE IF YOU EVER FORGET YOUR PASSWORD. THANK YOU!</div>
+      <div class="popup-buttons">
+        <button onclick="closePopup()">OK</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

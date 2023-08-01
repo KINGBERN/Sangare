@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+    <meta name="keywords" content="healthy, gardens, Sangare">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.your-website.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Healthy Sangare Gardens</title>
+	<style>
+		body {
+	margin: 0;
+	padding: 0;
+	background-color: ivory;
+	background-size: cover;
+	background-position: center;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background-color: bisque;
+}
+
+header button {
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+header button i {
+	color: black;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.nav-link {
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 50px;
+	font-size: 20px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.violet {
+	background-color: #8e44ad;
+}
+
+.indigo {
+	background-color: #2980b9;
+}
+
+.flash {
+	animation: flashing 1s linear infinite;
+}
+
+@keyframes flashing {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.container {
+		position: static;
+		transform: none;
+		margin-top: 20px;
+	}
+	header button {
+		font-size: 16px;
+	}
+
+	.nav-link {
+		font-size: 16px;
+		padding: 8px 16px;
+	}
+}
+
+@media (max-width: 768px) {
+	header {
+		padding: 5px;
+	}
+
+	header button {
+		font-size: 16px;
+	}
+
+	.nav-link {
+		font-size: 16px;
+		padding: 8px 16px;
+	}
+}
+
+	</style>
+</head>
+<body>
+	<header>
+        <button onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+      </header>
+	<div class="container">
+		<a href="photos.html" class="nav-link violet">Photos</a>
+		<a href="video.html" class="nav-link indigo">Videos</a>
+	</div>
+	<script>
+		function goBack() {
+    window.history.back();
+  }
+		const links = document.querySelectorAll('.nav-link');
+links.forEach(link => {
+	link.addEventListener('mouseenter', () => {
+		link.classList.add('flash');
+	});
+	link.addEventListener('mouseleave', () => {
+		link.classList.remove('flash');
+	});
+});
+	</script>
+</body>
+</html>

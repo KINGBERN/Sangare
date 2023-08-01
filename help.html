@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+    <meta name="keywords" content="healthy, gardens, Sangare">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.your-website.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Healthy Sangare Gardens</title>
+  <script src="script.js"></script>
+  <style>
+    /* styles.css */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: ivory;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .section {
+      background-color: bisque;
+      border-radius: 4px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    h3 {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    li a {
+      text-decoration: none;
+    }
+    .examples-list {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .examples-list li {
+      display: inline;
+      margin-right: 10px;
+    }
+    .examples-list li a {
+      color: #007bff;
+      padding: 5px;
+      border-radius: 4px;
+    }
+    .examples-list li a:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+    #popup {
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+    <h1></h1>
+<div class="section">
+  <h2>How can we help you?</h2>
+  <button onclick="showHelpForm()">Click here to get help</button>
+  <div id="helpForm" style="display: none;">
+    <form action="ix.php" method="post" onsubmit="return validateHelpForm(event)">
+      <input type="text" name="helpInput" placeholder="How can we help you?">
+      <input type="email" name="email" placeholder="Your email">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <h3>Examples</h3>
+  <ul>
+    <li><a href="#" onclick="setHelpExample('Do I have to create an account to place an order?')">Do I have to create an account to place an order?</a></li>
+    <li><a href="#" onclick="setHelpExample('I forgot my password. How to reset?')">I forgot my password. How to reset?</a></li>
+    <li><a href="#" onclick="setHelpExample('Do we charge for delivery?')">Do we charge for delivery?</a></li>
+  </ul>
+</div>
+<div class="section">
+  <h2>Report an Issue</h2>
+  <button onclick="showReportForm()">Click here to report an issue</button>
+  <div id="reportForm" style="display: none;">
+    <form action="x.php" method="post" onsubmit="return validateReportForm(event)">
+      <input type="text" name="issueInput" placeholder="Describe the issue">
+      <input type="email" name="reportEmail" placeholder="Your email" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <h3>Examples</h3>
+  <ul>
+    <li><a href="#" onclick="setReportExample('I received somebodys else order')">I received somebody's else order</a></li>
+    <li><a href="#" onclick="setReportExample('An issue with the delivery person')">An issue with the delivery person</a></li>
+    <li><a href="#" onclick="setReportExample('Poor quality products')">Poor quality products</a></li>
+  </ul>
+</div>
+<div id="popup" style="display: none;">
+  <p>Your submission has been received. Redirecting...</p>
+</div>
+<script>
+  function showHelpForm() {
+    var helpForm = document.getElementById("helpForm");
+    if (helpForm.style.display === "block") {
+      helpForm.style.display = "none";
+    } else {
+      helpForm.style.display = "block";
+    }
+  }
+
+  function validateHelpForm(event) {
+    var helpInput = document.querySelector('input[name="helpInput"]').value;
+    var email = document.querySelector('input[name="email"]').value;
+
+    if (!helpInput || !email) {
+      alert("Please fill in all the fields for help.");
+      event.preventDefault();
+      return false;
+    }
+
+    // Submit the form using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "ix.php");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        showPopupAndRedirect();
+      }
+    };
+    var formData = "helpInput=" + encodeURIComponent(helpInput) + "&email=" + encodeURIComponent(email);
+    xhr.send(formData);
+
+    return false; // Prevent the form from submitting normally
+  }
+
+  function setHelpExample(example) {
+    document.querySelector('input[name="helpInput"]').value = example;
+  }
+
+  function showReportForm() {
+    var reportForm = document.getElementById("reportForm");
+    if (reportForm.style.display === "block") {
+      reportForm.style.display = "none";
+    } else {
+      reportForm.style.display = "block";
+    }
+  }
+
+  function validateReportForm(event) {
+  var issueInput = document.querySelector('input[name="issueInput"]').value;
+  var reportEmail = document.querySelector('input[name="reportEmail"]').value;
+
+  if (!issueInput || !reportEmail) {
+    alert("Please fill in all the fields for report.");
+    event.preventDefault();
+    return false;
+  }
+  
+    // Submit the form using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "x.php");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        showPopupAndRedirect();
+      }
+    };
+    var formData = "issueInput=" + encodeURIComponent(issueInput) + "&reportEmail=" + encodeURIComponent(reportEmail);
+    xhr.send(formData);
+
+    return false; // Prevent the form from submitting normally
+  }
+
+  function setReportExample(example) {
+    document.querySelector('input[name="issueInput"]').value = example;
+  }
+
+  function showPopupAndRedirect() {
+    document.getElementById("popup").style.display = "block";
+    setTimeout(function() {
+      window.location.href = "home.html";
+    }, 2000);
+  }
+
+</script>
+</body>
+</html>

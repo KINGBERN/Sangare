@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+  <meta name="keywords" content="healthy, gardens, Sangare">
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.your-website.com">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ltGbJKo+AwDzEOnK/e6TvKInnz8J+6TGaB6vK5wknYDKiCNo2i98lgfJZ94ztJFm5wDnYrAdxzAul1t4m2zNJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Healthy Sangare Gardens</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    #video-player {
+      width: 100%;
+      height: 100%;
+    }
+
+    #play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      display: none;
+    }
+
+    #play-button i {
+      font-size: 5rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Media queries for phones and tablets */
+    @media (max-width: 1200px) {
+      #play-button i {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #play-button i {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #play-button i {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="video-container">
+  <video id="video-player" autoplay>
+    <source src="https://player.vimeo.com/progressive_redirect/playback/800131582/rendition/360p/file.mp4?loc=external&oauth2_token_id=57447761&signature=e26dd6996532ef005c86fb8b0a074d4e5f6f97862fe785e44752cd1ce66e8acc" type="video/mp4">
+  </video>
+  <div id="play-button">
+    <i class="fa fa-play-circle-o"></i>
+  </div>
+</div>
+<script>
+  var video = document.getElementById("video-player");
+  var playButton = document.getElementById("play-button");
+
+  function togglePlay() {
+    if (video.paused || video.ended) {
+      video.play();
+      playButton.style.display = "none";
+    } else {
+      video.pause();
+      playButton.style.display = "block";
+    }
+  }
+
+  video.addEventListener("click", togglePlay);
+  playButton.addEventListener("click", togglePlay);
+
+  video.addEventListener("ended", function() {
+    playButton.style.display = "block";
+    video.currentTime = 0; // Reset the video to the beginning
+  });
+</script>
+</body>
+</html>

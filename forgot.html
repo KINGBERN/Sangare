@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Brief description of Healthy Sangare Gardens.">
+    <meta name="keywords" content="healthy, gardens, Sangare">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.your-website.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0bd4bf2d7d.js" crossorigin="anonymous"></script>
+    <title>Healthy Sangare Gardens</title>
+    <style>
+      body {
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: ivory;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: bisque;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+button {
+  margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: green;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: bisque;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.popup-message {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.popup-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+/* Media Queries */
+
+/* Phones */
+@media only screen and (max-width: 767px) {
+  .container {
+    margin-top: 50px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="text"] {
+    padding: 8px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    margin-top: 80px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="text"] {
+    padding: 12px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* Updated styles */
+#email-form {
+  margin-bottom: 20px;
+}
+
+#code-form,
+#surname-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#code-form button,
+#surname-form button {
+  margin-top: 10px;
+}
+
+.or-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.or-label::before,
+.or-label::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.or-label::before {
+  margin-right: 10px;
+}
+
+.or-label::after {
+  margin-left: 10px;
+}
+
+    </style>
+    <script>
+      function closePopup() {
+      var popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
+      function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var passwordToggle = document.getElementById("password-toggle");
+  
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          passwordToggle.classList.remove("fa-eye");
+          passwordToggle.classList.add("fa-eye-slash");
+        } else {
+          passwordInput.type = "password";
+          passwordToggle.classList.remove("fa-eye-slash");
+          passwordToggle.classList.add("fa-eye");
+        }
+      }
+  
+      function showCodeForm() {
+        var emailForm = document.getElementById("email-form");
+        var codeForm = document.getElementById("code-form");
+  
+        emailForm.style.display = "none";
+        codeForm.style.display = "block";
+      }
+  
+      function showSurnameForm() {
+        var emailForm = document.getElementById("email-form");
+        var surnameForm = document.getElementById("surname-form");
+  
+        emailForm.style.display = "none";
+        surnameForm.style.display = "block";
+      }
+  
+      function checkEmailAndCode() {
+        var email = document.getElementById("email").value;
+        var generatedCode = document.getElementById("generatedcode").value;
+  
+        if (email.trim() === "") {
+          alert("Please enter your email!");
+          return;
+        }
+  
+        if (generatedCode.trim() === "") {
+          alert("Please enter the generated code!");
+          return;
+        }
+  
+        var formData = new URLSearchParams();
+        formData.append("email", email);
+        formData.append("generatedCode", generatedCode);
+  
+        fetch("iii.php", {
+          method: "POST",
+          body: formData,
+          headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.isValid) {
+              document.getElementById("email-form").style.display = "none";
+              document.getElementById("password-form").style.display = "block";
+            } else {
+              alert("Invalid email or generated code!");
+            }
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred while verifying the email and code!");
+          });
+      }
+  
+      function checkEmailAndSurname() {
+        var email = document.getElementById("email").value;
+        var surname = document.getElementById("surname").value;
+  
+        if (email.trim() === "") {
+          alert("Please enter your email!");
+          return;
+        }
+  
+        if (surname.trim() === "") {
+          alert("Please enter your surname!");
+          return;
+        }
+  
+        var formData = new URLSearchParams();
+        formData.append("email", email);
+        formData.append("surname", surname);
+  
+        fetch("iii.php", {
+          method: "POST",
+          body: formData,
+          headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.isValid) {
+              document.getElementById("email-form").style.display = "none";
+              document.getElementById("password-form").style.display = "block";
+            } else {
+              alert("Invalid email or surname!");
+            }
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred while verifying the email and surname!");
+          });
+      }
+  
+      function changePassword() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+  
+        var formData = new URLSearchParams();
+        formData.append("email", email);
+        formData.append("password", password);
+  
+        fetch("iii2.php", {
+          method: "POST",
+          body: formData,
+          headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert("Password changed successfully");
+              // Redirect to another page
+              window.location.href = "home.html";
+            } else {
+              alert("Failed to change the password!");
+            }
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            alert("Please try again!");
+          });
+      }
+    </script>
+  </head>
+  <body>
+      <div class="container">
+        <h2>Reset Password</h2>
+        <div id="email-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+          </div>
+          <div class="or-label">Use Code</div>
+          <div id="code-form" class="hidden">
+            <div class="form-group">
+              <label for="generatedcode">Generated Code</label>
+              <input type="number" id="generatedcode" placeholder="Enter the generated code">
+            </div>
+            <button onclick="checkEmailAndCode()">Continue</button>
+          </div>
+          <div class="or-label">Or Surname</div>
+          <div id="surname-form" class="hidden">
+            <div class="form-group">
+              <label for="surname">Surname</label>
+              <input type="text" id="surname" placeholder="Enter your surname">
+            </div>
+            <button onclick="checkEmailAndSurname()">Continue</button>
+          </div>
+        </div>
+        <div id="password-form" style="display: none;">
+          <div class="form-group">
+            <label for="password">New Password</label>
+            <div style="position: relative;">
+              <input type="password" id="password" placeholder="Enter your new password">
+              <i class="password-toggle fas fa-eye" id="password-toggle" onclick="togglePasswordVisibility()"></i>
+            </div>
+          </div>
+          <button onclick="changePassword()">Continue</button>
+        </div>
+        <div class="popup" id="popup">
+          <div class="popup-content">
+            <div class="popup-message">Use the CODE OR SURNAME you registered with.You can use only one of them (SURNAME) or (CODE) then continue to change your password.</div>
+            <div class="popup-buttons">
+              <button onclick="closePopup()">OK</button>
+            </div>
+            </div>
+            </div>
+            </div>
+          
+    </body>
+  </html>
+  
