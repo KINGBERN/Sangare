@@ -283,23 +283,30 @@ section {
   outline-offset: -1rem;
   text-align: center;
   box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  height: 20rem; /* Set a fixed height for all boxes */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .features .box-container .box:hover {
   outline: var(--outline-hover);
   outline-offset: 0rem;
+  transform: translateY(-5px);
 }
 
 .features .box-container .box img {
   margin: 1rem 0;
-  height: 15rem;
+  height: 10rem;
   max-width: 100%;
+  align-self: center; /* Center the image horizontally */
 }
 
-.features .box-container .box h3 {
-  font-size: 2.5rem;
-  line-height: 1.8;
-  color: var(--black);
+.features .box-container .box h2 {
+  font-size: 2rem; /* Adjusted font size */
+  color: #007bff;
 }
 
 .features .box-container .box p {
@@ -308,6 +315,19 @@ section {
   color: var(--light-color);
   padding: 1rem 0;
 }
+
+.features .box-container .box .feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features .box-container .box .feature-item i {
+  font-size: 4rem;
+  color: black;
+  margin-bottom: 1rem;
+}
+
 
 .card-gallery {
   width: 100%;
@@ -638,7 +658,7 @@ html{
             <a href="terms and coditions.html" target="_blank">Sangare terms and conditions</a>
         </div>
         <div class="links">
-          <a href="register.html">Register</a>
+          <a href="register.html">Sign up</a>
           <a href="forgot.html">Forgot Password</a>
         </div>
       </div>
@@ -657,33 +677,30 @@ html{
     </section>
     <!-- home section ends -->
     <!-- features section starts  -->
-    <section class="features" id="features">
-        <h1 class="heading">  <span></span> </h1>
-        <div class="box-container">
-            <div class="box">
-            <div class="feature-item">
-        <i class="fas fa-truck"></i>
-        <h2>Welcome!</h2>
-        <p>Thank you for choosing Our Website. We hope you enjoy browsing our selection of products and find something you love!</p>
-      </div>
-            </div>
-            <div class="box">
-            <div class="feature-item">
-        <i class="fas fa-clock"></i>
-        <h2> Login to Continue</h2>
-        <p>Please register first then login to continue.</p>
-      </div>
-            </div>
-            <div class="box">
-            <div class="feature-item">
-        <i class="fas fa-thumbs-up"></i>
-        <h2>Leave a Review</h2>
-        <p>We value your feedback! Please take a moment to leave a review on your experience with our website and products.</p>
-      </div>
-            </div>
+<section class="features" id="features">
+  <h1 class="heading"> <span></span> </h1>
+  <div class="box-container">
+    <a href="minc.html" class="nav-link"> <!-- Added clickable link -->
+      <div class="box">
+        <div class="feature-item">
+          <i class="fas fa-truck"></i>
+          <h2>Sign up</h2>
+          <p>Please sign up then login to view our products.</p>
         </div>
-    </section>
-    <!--features section ends-->
+      </div>
+    </a>
+    <a href="review.html" class="nav-link"> <!-- Added clickable link -->
+      <div class="box">
+        <div class="feature-item">
+          <i class="fas fa-thumbs-up"></i>
+          <h2>Review</h2>
+          <p>We value your feedback! Please take a moment to leave a review.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<!--features section ends-->
     <!-- review section starts  -->
 <section class="reviews" id="reviews">
     <h1 class="heading"><span>Reviews</span> </h1>
